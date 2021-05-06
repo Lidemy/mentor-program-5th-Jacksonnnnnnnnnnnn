@@ -1,6 +1,6 @@
 const request = require('request')
 
-const APILink4 = 'https://api.twitch.tv/kraken/games/top'
+const APILink4 = 'https://api.twitch.tv/kraken/games/top?_limit=10'
 const options = {
   url: `${APILink4}`,
   headers: {
@@ -12,7 +12,7 @@ const options = {
 request(options, (err, res, body) => {
   if (err) return console.log('err: ', err)
   const games = JSON.parse(body)
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < games.top.length; i++) {
     console.log(`${games.top[i].viewers} ${games.top[i].game.name}`)
   }
 })
