@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Lazy-form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+  <nav class="navbar"></nav>
+  <div class="body">
+    <div class="header">
+      <div class="topic">
+        新拖延運動報名表單
+      </div>
+      <div class="normal__text">
+        <p>活動日期：2020/12/10 ~ 2020/12/11</p>
+        <p>活動地點：台北市大安區新生南路二段1號</p>
+        <div style="color: red; margin-top: 22px;">
+          *必填
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content__Q">
+        暱稱 <label class="red-star">*</label>
+      </div>
+      <div class="content__A">
+        <input placeholder="您的回答">
+      </div>
+      <div class="content__Q">
+        電子郵件 <label class="red-star">*</label>
+      </div>
+      <div class="content__A">
+        <input placeholder="您的電子郵件">
+      </div>
+      <div class="content__Q">
+        手機號碼 <label class="red-star">*</label>
+      </div>
+      <div class="content__A">
+        <input placeholder="您的手機號碼">
+      </div>
+      <div class="content__Q">
+        報名類型 <label class="red-star">*</label>
+      </div>
+      <div class="options">
+        <input type="radio" name="application" id="bed"/>
+        <label for="bed">躺在床上用想像力實作</label>
+      </div>
+      <div class="options">
+        <input type="radio" name="application" id="ground"/>
+        <label for="ground">趴在地上滑手機找現成的</label>
+      </div>
+      <div class="content__Q">
+        怎麼知道這個活動的？ <label class="red-star">*</label>
+      </div>
+      <div class="content__A">
+        <input placeholder="您的回答">
+      </div>
+      <div class="content__Q">
+        其他
+      </div>
+      <div class="normal__text">
+        <div>對活動的一些建議</div>
+      </div>
+      <div class="content__A">
+        <input placeholder="您的回答">
+      </div>
+    </div>
+    <div class="footer">
+      <button class="button">提交</button>
+      <div class="normal__text">
+        <p>請勿透過表單送出您的密碼。</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
