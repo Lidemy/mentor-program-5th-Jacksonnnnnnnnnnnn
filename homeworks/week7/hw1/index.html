@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Lazy-form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar"></nav>
+    <form class="form">
+      <div class="header">
+        <div class="topic">
+          新拖延運動報名表單
+        </div>
+        <div class="normal__text">
+          <p>活動日期：2020/12/10 ~ 2020/12/11</p>
+          <p>活動地點：台北市大安區新生南路二段1號</p>
+          <div class="r">
+            *必填
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content__Q required">
+          暱稱
+        </div>
+        <div class="content__A req">
+          <input name="nickname" placeholder="您的回答"/>
+          <div class="hidden red">這是必填欄位</div>
+        </div>
+        <div class="content__Q required">
+          電子郵件
+        </div>
+        <div class="content__A req">
+          <input name="email" placeholder="您的電子郵件"/>
+          <div class="hidden red">這是必填欄位</div>
+        </div>
+        <div class="content__Q required">
+          手機號碼
+        </div>
+        <div class="content__A req">
+          <input name="phoneNo" placeholder="您的手機號碼"/>
+          <div class="hidden red">這是必填欄位</div>
+        </div>
+        <div class="content__Q required">
+          報名類型
+        </div>
+        <div class="option">
+          <div class="options">
+            <input type="radio" name="type" value="1"/>
+            <label for="bed">躺在床上用想像力實作</label>
+          </div>
+          <div class="options">
+            <input type="radio" name="type" value="2"/>
+            <label for="ground">趴在地上滑手機找現成的</label>
+          </div>
+          <div class="hidden red">請選擇報名類型</div>
+        </div>
+        <div class="content__Q required">
+          怎麼知道這個活動的？
+        </div>
+        <div class="content__A req">
+          <input name="activity" placeholder="您的回答">
+          <div class="hidden red">這是必填欄位</div>
+        </div>
+        <div class="content__Q">
+          其他
+        </div>
+        <div class="normal__text">
+          <div>對活動的一些建議</div>
+        </div>
+        <div class="content__A">
+          <input placeholder="您的回答"/>
+        </div>
+      </div>
+      <div class="footer">
+        <button type="submit" class="button">提交</button>
+        <div class="normal__text">
+          <p>請勿透過表單送出您的密碼。</p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="./index.js"></script>
+  <footer>© 2020 © Copyright. All rights Reserved.</footer>
+</body>
+</html>
