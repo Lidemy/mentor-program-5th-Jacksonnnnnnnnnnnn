@@ -1,0 +1,27 @@
+.list {
+  max-width: 510px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create {
+  margin-left: 10px;
+}
+
+.item {
+  display: flex;
+  margin-top: 2em;
+  align-items: center;
+}
+
+.item:hover {
+  background: #FFE4E1;
+}
+
+.item__content {
+  flex: 1;
+}
+
+.item__content__PlusLine {
+  text-decoration: line-through;
+}
