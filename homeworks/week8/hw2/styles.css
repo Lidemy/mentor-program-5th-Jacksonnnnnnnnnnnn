@@ -1,0 +1,114 @@
+body {
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.wrapper {
+  height: 50px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em
+}
+
+.title {
+  font-size: 25px;
+}
+
+.navbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 16px;
+}
+
+.navbar__list li {
+  border-radius: 8px;
+  transition: background 0.1s ease-in;
+}
+
+.navbar__list li a {
+  display: block;
+  text-decoration: none;
+  color:black;
+  padding: 12px 25px;
+}
+
+.content__block {
+  padding: 0 10em;
+}
+
+.games__intro {
+  color: white;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.games__name {
+  font-size: 3rem;
+  font-family: fantasy;
+}
+
+.games__sub-title {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.games__streams {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.stream__block {
+  margin-top: 15px;
+  transition: all .2s ease-in-out;
+}
+
+.stream__block:hover {
+  transform: scale(1.1);
+}
+
+.stream__pic {
+  width: 320px;
+  height: 180px;
+  /* background-image: url('./streamImg.jpg'); */
+}
+
+.stream__data {
+  background-color:darkslategray;
+  display: flex;
+  align-items: center;
+  max-width: 320px;
+  color:aliceblue;
+}
+
+.stream__logo {
+  /* background: black; */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 5px 7px;
+}
+
+.stream__status {
+  font-size: 16px;
+  white-space: nowrap;
+  width: 245px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stream__player {
+  font-size: 15px;
+  margin-top: 6px;
+  white-space: nowrap;
+  width: 245px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
