@@ -43,14 +43,14 @@
       </div>
       <ul class="navbar__list">
         <div>
-          <li><a href="#">文章列表</a></li>
-          <li><a href="#">分類專區</a></li>
+          <li><a href="admin.php">文章列表</a></li>
+          <li><a href="categories.php">分類專區</a></li>
           <li><a href="#">關於我</a></li>
         </div>
         <div>
           <li><strong>管理員 <?=$username?></strong></li>
           <li><a href="admin.php">管理後台</a></li>
-          <li><a href="#">登出</a></li>
+          <li><a href="logout.php">登出</a></li>
         </div>
       </ul>
     </div>
