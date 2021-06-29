@@ -44,7 +44,7 @@
       </div>
       <ul class="navbar__list">
         <div>
-          <li><a href="#">文章列表</a></li>
+          <li><a href="admin.php">文章列表</a></li>
           <li><a href="categories.php">分類專區</a></li>
           <li><a href="#">關於我</a></li>
         </div>
@@ -66,9 +66,11 @@
       <article class="post">
         <div class="post__header">
           <div><?=escape($row['title']);?><br>by <?=escape($row['username']);?></div>
+          <?php if($username) {?>
           <div class="post__actions">
-            <a class="post__action" href="edit.html">編輯</a>
+            <a class="post__action" href="edit.php?id=<?=$row['id']?>">編輯</a>
           </div>
+          <?php }?>
         </div>
         <div class="post__info"><?=escape($row['created_at']);?>
         </div>
