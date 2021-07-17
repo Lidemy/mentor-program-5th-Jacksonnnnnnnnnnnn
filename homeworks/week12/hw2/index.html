@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>TODO-LIST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="list">
+    <div class="header">
+      <h1>TODO LIST</h1>
+      <input class="input-TODO" placeholder="新增你的代辦事項吧"/><button class="create">Create</button>
+    </div>
+    <div class="item-block">
+      <!-- <div class="item">
+        <button class="check">Check</button>
+        <div class="item__content">
+          Example
+        </div>
+        <button class="delete">Delete</button>
+      </div> -->
+    </div>
+    <div class="stats">
+      <div><span class="unfinished"></span> 個未完成</div>
+      <div class="options d-flex">
+        <div class="active" data-filter="all">全部</div>
+        <div class="ml-2" data-filter="unfinished">未完成</div>
+        <div class="ml-2" data-filter="finished">已完成</div>
+      </div>
+      <div class="delFinished">移除已完成項目</div>
+    </div>
+    <div class="reminder">雙擊項目"內容"可以修改，修改後按 Enter 即可~</div>
+  <div>
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
