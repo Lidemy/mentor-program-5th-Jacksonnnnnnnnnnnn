@@ -1,0 +1,157 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .card {
+      margin-top: 12px;
+    }
+  </style>
+  <script>
+    function appendCommentToDOM(container, comment, isPrepend) {
+      const html = `
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">${escapeHtml(comment.nickname)}</h5>
+            <p class="card-text">${escapeHtml(comment.content)}</p>
+            <span class="form-text">
+              <small>id:${comment.id}</small>
+            </span>
+          </div>
+        </div>
+      `
+      if (isPrepend) {
+        container.prepend(html)
+      } else {
+        container.append(html)
+      }
+      
+    }
+
+    function escapeHtml(unsafe) {
+      return unsafe
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+    }
+
+    const appendButtonHTML = `<button class="btn btn-success more">read more</button>`
+    function appendButton() {
+      $('.comments').append(appendButtonHTML)
+    }
+
+    function getComments(siteKey, beforeID, callback) {
+      // let url = `http://localhost/lidemy/discussion/api_comments.php?site_key=${siteKey}`
+      let url = `http://mentor-program.co/mtr04group4/jackson/week12/api_comments.php?site_key=${siteKey}`
+      
+      if (beforeID) {
+        url += '&beforeID=' + beforeID
+      }
+      $.ajax({
+        url,
+      }).done(function(data) {
+        callback(data)
+      })
+      
+    }
+
+    let minID = null
+    let noMoreData = false
+    const siteKey = 'li'
+    $(document).ready(() => {
+      const commentDOM = $('.comments')
+      getCommentsWithButton()
+
+      $('.comments').on('click', '.more', () => {
+        getCommentsWithButton()
+      })
+    
+      $('.add-comment-form').submit(e => {
+        e.preventDefault()
+        const newComment = {
+          site_key: 'li',
+          nickname: $('input[name=nickname]').val(),
+          content : $('textarea[name=content]').val()
+        }
+        $.ajax({
+          type: 'POST',
+          // url: 'http://localhost/lidemy/discussion/add_comments.php',
+          url: 'http://mentor-program.co/mtr04group4/jackson/week12/add_comments.php',
+          data: newComment
+        }).done( function(data) {
+          if(!data.ok) {
+            alert(data.message)
+            return
+          }
+          $('input[name=nickname]').val('')
+          $('textarea[name=content]').val('')
+          appendCommentToDOM(commentDOM, newComment, true)
+
+        })
+      })
+    })
+
+    function getCommentsWithButton() {
+      const commentDOM = $('.comments')
+      $('.more').hide()
+      if (noMoreData) {
+        return
+      }
+      getComments(siteKey, minID, data=> {
+        if(!data.ok) {
+          alert(data.message)
+          return
+        }
+
+        const comments = data.discussions;
+        for (let comment of comments) {
+          appendCommentToDOM(commentDOM, comment)
+        }
+
+        const noMoreDataHTML = `<p class="text-center text-white bg-danger"><strong>見底啦</strong></p>`
+        if (comments.length === 0) {
+          noMoreData = true
+          $('.more').hide()
+          $('.comments').append(noMoreDataHTML)
+        } else {
+          minID = comments[comments.length - 1].id
+          appendButton()
+        }
+
+      })
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <form class="add-comment-form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">暱稱</label>
+        <input type="text" name="nickname" class="form-control" id="form-nickname">
+      </div>
+      <div class="form-group">
+        <label for="tontent-textarea">留言內容</label>
+        <textarea name="content" class="form-control" id="content-textarea" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class="comments">
+    </div>
+    <div class="button">
+    </div>
+  <!-- <script src="js/scripts.js"></script> -->
+</body>
+</html>
+
+

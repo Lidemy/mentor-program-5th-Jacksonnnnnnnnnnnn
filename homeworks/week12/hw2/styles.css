@@ -1,0 +1,57 @@
+.list {
+  max-width: 510px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create {
+  margin-left: 10px;
+}
+
+.check {
+  width: 25px;
+  height: 25px;
+}
+
+.active {
+  border: 1px solid rebeccapurple;
+}
+
+.item {
+  display: flex;
+  margin-top: 2em;
+  align-items: center;
+  padding: 12px;
+}
+
+.item:hover {
+  background: #FFE4E1;
+}
+
+.item__content {
+  flex: 1;
+}
+
+.item__input {
+  flex: 1;
+}
+
+.item.done .item__content {
+  text-decoration: line-through;
+}
+
+.stats {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.reminder {
+  color:gray;
+  font-size: small;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
